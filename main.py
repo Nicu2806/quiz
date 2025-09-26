@@ -339,7 +339,7 @@ st.set_page_config(page_title="Quiz FCIM", layout="centered")
 # --- Aici înlocuiți cu calea către logo-ul dumneavoastră ---
 st.image("Logo_inscript_horizontal-fcim-m.png")
 
-st.title("🚀Quiz Interactiv de Informatică🚀", anchor=False)
+st.title("🚀Quiz FCIM🚀", anchor=False)
 
 # Inițializarea stării la prima rulare
 if 'quiz_started' not in st.session_state:
