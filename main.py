@@ -310,14 +310,22 @@ def display_results():
     score = st.session_state.score
     total = len(st.session_state.questions)
     
-    # Afișează mesajul în funcție de scor
+    # Baloanele apar mereu la final
+    st.balloons()
+
+    # Mesaj și efect suplimentar în funcție de scor
     if score == total:
         st.success(f"Excelent! Ai răspuns corect la toate cele {total} întrebări!")
-        st.balloons()
+        st.markdown("<h2 style='color:gold;'>🏆 Super Campion! 🏆</h2>", unsafe_allow_html=True)
+        st.toast("Perfect! Felicitări!", icon="🎊")
     elif score >= total / 2:
         st.info(f"Felicitări! Ai răspuns corect la {score} din {total} întrebări.")
+        st.snow()
+        st.toast("Destul de bine! Mai exersează!", icon="👍")
     else:
         st.warning(f"Ai răspuns corect la {score} din {total}. Mai exersează și vei deveni un expert!")
+        st.snow()
+        st.toast("Poți mai mult! Încearcă din nou!", icon="💪")
 
     # Buton pentru a reîncepe quiz-ul
     if st.button("Reîncepe Quiz-ul", type="primary"):
